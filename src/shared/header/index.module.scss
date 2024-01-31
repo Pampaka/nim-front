@@ -1,2 +1,23 @@
+$blockGap: 8px;
+$headerHeight: 30px;
+
 .head {
+	display: flex;
+	height: $headerHeight;
+	border-bottom: 1px solid var(--border-primary);
+	padding: 16px 32px;
+	align-items: center;
+}
+
+.start {
+	display: flex;
+	gap: $blockGap;
+	flex: 1 0;
+}
+
+.end {
+	display: flex;
+	gap: $blockGap;
+	align-items: center;
+	justify-content: flex-end;
 }

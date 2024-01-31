@@ -1,2 +1,11 @@
-:root {
+// :root {
+
+// }
+
+html[theme='light'] {
+	--border-primary: #d1d1d1;
+}
+
+html[theme='dark'] {
+	--border-primary: #d1d1d1;
 }
