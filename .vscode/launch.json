@@ -1,15 +1,25 @@
 {
-    "version": "0.1.0",
-    "configurations": [
-        {
-            "name": "start",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run-script", "dev"
-            ]
-        }
-    ]
+	"version": "0.1.0",
+	"configurations": [
+		{
+			"name": "start",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceRoot}",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run-script", "dev"],
+			"env": {
+				"HOST": "127.0.0.1",
+				"PORT": "3000"
+			}
+		},
+		{
+			"name": "build",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceRoot}",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run-script", "build"]
+		}
+	]
 }
