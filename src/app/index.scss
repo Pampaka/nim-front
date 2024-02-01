@@ -1,2 +1,8 @@
-@import './styles/normalize.scss';
-@import './styles/root.scss';
+@import './root.scss';
+
+body {
+	margin: 0;
+	background-color: var(--bg-default);
+	font-family: var(--font-primary);
+	color: var(--text-primary);
+}

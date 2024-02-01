@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Single+Day&display=swap');
+
+:root {
+	--font-primary: Poppins;
+	--font-logo: Poor Story;
+}
+
+html[theme='light'] {
+	--text-brand: #00df9c;
+	--text-brand-hover: #00c78b;
+	--text-brand-active: #009266;
+	--text-primary: #000000;
+
+	--bg-default: #f8f8f8;
+	--bg-primary: #ffffff;
+
+	--border-primary: #d1d1d1;
+
+	--shadow-primary: 4px 4px 7px -2px rgba(34, 60, 80, 0.25);
+}
+
+html[theme='dark'] {
+	--text-brand: #00dd9b;
+	--text-brand-hover: #00c78b;
+	--text-brand-active: #00e9a3;
+	--text-primary: #ffffff;
+
+	--bg-default: #222222;
+	--bg-primary: #2e2e2e;
+
+	--border-primary: #d1d1d1;
+
+	--shadow-primary: 0 0 1px 1px rgba(105, 105, 105, 0.644);
+}

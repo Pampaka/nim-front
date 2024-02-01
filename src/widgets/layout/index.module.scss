@@ -1,0 +1,21 @@
+.headWrapper {
+	padding: 18px;
+	background-color: var(--bg-default);
+}
+
+.logo {
+	font-family: var(--font-logo);
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--text-brand);
+	transition: color 0.15s;
+	user-select: none;
+
+	&:hover {
+		color: var(--text-brand-hover);
+	}
+	&:active {
+		color: var(--text-brand-active);
+	}
+}
