@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { themeReducer } from 'features/theme-toggle'
+import { layotReducer } from 'widgets/layout'
 
 export const store = configureStore({
 	reducer: {
-		themeReducer: themeReducer
+		themeReducer: themeReducer,
+		layotReducer: layotReducer
 	}
 })
 

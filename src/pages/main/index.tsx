@@ -1,7 +1,5 @@
-import { Layout } from 'widgets/layout'
-
 const MainPage = () => {
-	return <Layout></Layout>
+	return <div></div>
 }
 
 export default MainPage
