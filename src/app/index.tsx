@@ -9,13 +9,13 @@ import './index.scss'
 function App() {
 	return (
 		<Provider store={store}>
-			<Layout>
-				<BrowserRouter>
+			<BrowserRouter>
+				<Layout>
 					<Suspense fallback={'Загрузка...'}>
 						<Routing />
 					</Suspense>
-				</BrowserRouter>
-			</Layout>
+				</Layout>
+			</BrowserRouter>
 		</Provider>
 	)
 }

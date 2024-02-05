@@ -9,7 +9,7 @@ function setThemeToDocument(theme: Theme) {
 }
 
 const isDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)')
-let defaultTheme: Theme = 'light'
+let defaultTheme: Theme
 const storageTheme = (localStorage.getItem('theme') as Theme) || ''
 if (['light', 'dark'].includes(storageTheme)) {
 	defaultTheme = storageTheme
