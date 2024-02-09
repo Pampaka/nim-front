@@ -5,4 +5,18 @@ body {
 	background-color: var(--bg-default);
 	font-family: var(--font-primary);
 	color: var(--text-primary);
+	font-weight: 500;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text-primary);
+	transition: 0.15s;
+
+	&:hover {
+		color: var(--text-primary-hover);
+	}
+	&:active {
+		color: var(--text-primary-active);
+	}
 }
