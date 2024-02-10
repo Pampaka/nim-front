@@ -27,6 +27,13 @@
 }
 
 .main {
-	margin-top: calc(#{$headerHeight} + 18px);
-	height: 1200px;
+	padding-top: calc(#{$headerHeight} + 36px);
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - (#{$headerHeight} + 36px));
+
+	&.noHeader {
+		padding-top: 0;
+		min-height: 100vh;
+	}
 }

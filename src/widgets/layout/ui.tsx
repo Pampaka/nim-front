@@ -8,7 +8,7 @@ import { Header } from 'shared/ui/header'
 import { Paths } from 'shared/consts/paths'
 import style from './index.module.scss'
 
-export interface LayoutProps extends ComponentPropsWithoutRef<'main'> {}
+export interface LayoutProps extends ComponentPropsWithoutRef<'div'> {}
 
 export const Layout = ({ children, className, ...props }: LayoutProps) => {
 	const { header } = useAppSelector(state => state.layotReducer)
@@ -32,12 +32,12 @@ export const Layout = ({ children, className, ...props }: LayoutProps) => {
 					/>
 				)}
 			</div>
-			<main
+			<div
 				className={classNames(style.main, { [style.noHeader]: !header }, className)}
 				{...props}
 			>
 				{children}
-			</main>
+			</div>
 		</div>
 	)
 }

@@ -1,0 +1,9 @@
+.input {
+	height: 32px;
+	border: 1px solid var(--border-primary);
+	border-radius: 6px;
+
+	&:focus {
+		outline: 1px solid var(--border-primary-active);
+	}
+}
