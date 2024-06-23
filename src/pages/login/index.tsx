@@ -1,12 +1,11 @@
-import { useLayout } from 'widgets/layout'
+import { layoutSetting } from 'widgets/layout'
 import { LoginForm } from 'features/login-form'
 import { Card } from 'shared/ui/card'
 import { Button } from 'shared/ui/button'
+
 import style from './index.module.scss'
 
 const LoginPage = () => {
-	useLayout({ header: true, sideBar: false })
-
 	return (
 		<div className={style.page}>
 			<Card className={style.card}>
@@ -18,4 +17,4 @@ const LoginPage = () => {
 	)
 }
 
-export default LoginPage
+export default layoutSetting(LoginPage)

@@ -1,8 +1,9 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+import { observer } from 'mobx-react-lite'
 
-import { useAppSelector } from 'app/hooks'
+import { layoutService } from './model'
 import { ThemeToggle } from 'features/theme-toggle'
 import { LoginLink } from 'features/login-link'
 import { Header } from 'shared/ui/header'
@@ -12,13 +13,11 @@ import style from './index.module.scss'
 
 export interface LayoutProps extends ComponentPropsWithoutRef<'div'> {}
 
-export const Layout = ({ children, className, ...props }: LayoutProps) => {
-	const { header } = useAppSelector(state => state.layotReducer)
-
+export const Layout = observer(({ children, className, ...props }: LayoutProps) => {
 	return (
 		<div>
 			<div className={style.headWrapper}>
-				{header && (
+				{layoutService.header && (
 					<Header
 						start={
 							<Link className={style.logo} to={Paths.MAIN}>
@@ -35,11 +34,15 @@ export const Layout = ({ children, className, ...props }: LayoutProps) => {
 				)}
 			</div>
 			<div
-				className={classNames(style.main, { [style.noHeader]: !header }, className)}
+				className={classNames(
+					style.main,
+					{ [style.noHeader]: !layoutService.header },
+					className
+				)}
 				{...props}
 			>
 				{children}
 			</div>
 		</div>
 	)
-}
+})

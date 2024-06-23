@@ -1,9 +1,7 @@
-import { useLayout } from 'widgets/layout'
+import { layoutSetting } from 'widgets/layout'
 
 const MainPage = () => {
-	useLayout({ header: true, sideBar: true })
-
 	return <div></div>
 }
 
-export default MainPage
+export default layoutSetting(MainPage)

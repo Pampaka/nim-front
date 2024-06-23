@@ -1,37 +1,50 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { RootState } from 'app/store'
+import { action, makeObservable, observable } from 'mobx'
 
-type Theme = 'light' | 'dark'
-
-function setThemeToDocument(theme: Theme) {
-	localStorage.setItem('theme', theme)
-	document.documentElement.setAttribute('theme', theme)
+export enum Themes {
+	DARK = 'dark',
+	LIGHT = 'light'
 }
 
-const isDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)')
-let defaultTheme: Theme
-const storageTheme = (localStorage.getItem('theme') as Theme) || ''
-if (['light', 'dark'].includes(storageTheme)) {
-	defaultTheme = storageTheme
-} else {
-	defaultTheme = isDarkTheme ? 'dark' : 'light'
+export const useTheme = () => {
+	return themeService
 }
-setThemeToDocument(defaultTheme)
 
-const themeSlice = createSlice({
-	name: 'theme',
-	initialState: {
-		theme: defaultTheme
-	},
-	reducers: {
-		changeTheme(state) {
-			const theme: Theme = state.theme === 'light' ? 'dark' : 'light'
-			setThemeToDocument(theme)
-			state.theme = theme
-		}
+class ThemeService {
+	theme: Themes = Themes.LIGHT
+
+	constructor() {
+		this._initializeTheme()
+
+		makeObservable(this, {
+			setTheme: action,
+			theme: observable
+		})
 	}
-})
 
-export const themeReducer = themeSlice.reducer
-export const { changeTheme } = themeSlice.actions
-export const selectTheme = (store: RootState) => store.themeReducer.theme
+	private _initializeTheme() {
+		const isDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)')?.matches
+		const storageTheme = (localStorage.getItem('theme') as Themes) || ''
+
+		let defaultTheme: Themes
+		if (storageTheme && [Themes.LIGHT, Themes.DARK].includes(storageTheme)) {
+			defaultTheme = storageTheme
+		} else {
+			defaultTheme = isDarkTheme ? Themes.DARK : Themes.LIGHT
+		}
+
+		this.setTheme(defaultTheme)
+	}
+
+	changeTheme() {
+		const theme: Themes = this.theme === Themes.LIGHT ? Themes.DARK : Themes.LIGHT
+		this.setTheme(theme)
+	}
+
+	setTheme(theme: Themes) {
+		localStorage.setItem('theme', theme)
+		document.documentElement.setAttribute('theme', theme)
+		this.theme = theme
+	}
+}
+
+export const themeService = new ThemeService()

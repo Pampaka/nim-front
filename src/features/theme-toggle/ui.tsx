@@ -1,15 +1,13 @@
-import { useAppDispatch, useAppSelector } from 'app/hooks'
-import { changeTheme, selectTheme } from './model'
+import { observer } from 'mobx-react-lite'
 
-export const ThemeToggle = () => {
-	const theme = useAppSelector(selectTheme)
-	const dispatch = useAppDispatch()
+import { Themes, themeService } from './model'
 
+export const ThemeToggle = observer(() => {
 	return (
 		<input
 			type="checkbox"
-			checked={theme === 'dark'}
-			onChange={() => dispatch(changeTheme())}
+			checked={themeService.theme === Themes.DARK}
+			onChange={() => themeService.changeTheme()}
 		/>
 	)
-}
+})
