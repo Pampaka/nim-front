@@ -1,7 +1,6 @@
 import { layoutSetting } from 'widgets/layout'
 import { LoginForm } from 'features/login-form'
 import { Card } from 'shared/ui/card'
-import { Button } from 'shared/ui/button'
 
 import style from './index.module.scss'
 
@@ -11,7 +10,6 @@ const LoginPage = () => {
 			<Card className={style.card}>
 				<h1 className={style.title}>Вход</h1>
 				<LoginForm />
-				<Button className={style.submit}>Войти</Button>
 			</Card>
 		</div>
 	)

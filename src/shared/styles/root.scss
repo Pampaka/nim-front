@@ -13,6 +13,7 @@ html[theme='light'] {
 	--text-primary: #000000;
 	--text-primary-hover: #3a3a3a;
 	--text-primary-active: #000000;
+	--text-danger: #f72424;
 
 	--bg-default: #f8f8f8;
 	--bg-primary: #ffffff;
@@ -21,6 +22,7 @@ html[theme='light'] {
 
 	--border-primary: #d1d1d1;
 	--border-primary-active: #00df9c;
+	--border-danger: #f72424;
 
 	--shadow-primary: 4px 4px 7px -2px rgba(34, 60, 80, 0.25);
 }
@@ -30,11 +32,13 @@ html[theme='dark'] {
 	--text-brand-hover: #00c78b;
 	--text-brand-active: #00e9a3;
 	--text-primary: #ffffff;
+	--text-danger: #e44747;
 
 	--bg-default: #222222;
 	--bg-primary: #2e2e2e;
 
 	--border-primary: #d1d1d1;
+	--border-danger: #e44747;
 
 	--shadow-primary: 0 0 1px 1px rgba(105, 105, 105, 0.644);
 }

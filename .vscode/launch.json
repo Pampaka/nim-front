@@ -10,7 +10,8 @@
 			"runtimeArgs": ["run-script", "dev"],
 			"env": {
 				"HOST": "127.0.0.1",
-				"PORT": "3000"
+				"PORT": "3000",
+				"VITE_AUTH_URL": "http://127.0.0.1:5000"
 			}
 		},
 		{
