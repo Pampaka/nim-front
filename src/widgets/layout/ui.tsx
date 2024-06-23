@@ -1,11 +1,13 @@
 import type { ComponentPropsWithoutRef } from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+
 import { useAppSelector } from 'app/hooks'
 import { ThemeToggle } from 'features/theme-toggle'
 import { LoginLink } from 'features/login-link'
 import { Header } from 'shared/ui/header'
-import { Paths } from 'shared/consts/paths'
+import { Paths } from 'shared/consts'
+
 import style from './index.module.scss'
 
 export interface LayoutProps extends ComponentPropsWithoutRef<'div'> {}

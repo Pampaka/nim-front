@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { lazy } from 'react'
-import { Paths } from 'shared/consts/paths'
+import { Paths } from 'shared/consts'
 
 const MainPage = lazy(() => import('./main'))
 const LoginPage = lazy(() => import('./login'))

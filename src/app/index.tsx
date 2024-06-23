@@ -1,10 +1,12 @@
 import { Suspense } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
+
 import { Routing } from 'pages'
 import { Layout } from 'widgets/layout'
 import { store } from './store'
-import './index.scss'
+
+import 'shared/styles'
 
 function App() {
 	return (
