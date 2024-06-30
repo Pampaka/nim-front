@@ -36,7 +36,7 @@ export const LoginForm = ({ ...props }: LoginFormProps) => {
 				error={errors.password?.message}
 				{...registers.password}
 			/>
-			<Checkbox label="Запомнить пароль" />
+			<Checkbox label="Запомнить пароль" {...registers.rememberUser} />
 			<ErrorMessage error={errors.root?.serverError?.message || 'asdasdasd'} />
 			<Button className={style.submit} disabled={isSubmitting}>
 				{isSubmitting ? <Loader /> : 'Войти'}

@@ -8,6 +8,7 @@ import { setApiErrors } from 'shared/helpers/error'
 type LoginFormData = {
 	login: string
 	password: string
+	rememberUser: boolean
 }
 
 export const useLoginForm = () => {
@@ -16,7 +17,8 @@ export const useLoginForm = () => {
 	const { handleSubmit, register, formState, setError } = useForm<LoginFormData>({
 		defaultValues: {
 			login: '',
-			password: ''
+			password: '',
+			rememberUser: false
 		}
 	})
 
@@ -26,7 +28,7 @@ export const useLoginForm = () => {
 		}
 
 		try {
-			await AuthApi.signIn(data.login, data.password)
+			await AuthApi.signIn(data.login, data.password, data.rememberUser)
 			navigate(Paths.MAIN)
 		} catch (e) {
 			setApiErrors(e, setError)
@@ -34,19 +36,22 @@ export const useLoginForm = () => {
 	}
 
 	const login = register('login', {
-		// required: 'Обязательное поле'
+		required: 'Обязательное поле'
 	})
 
 	const password = register('password', {
-		// required: 'Обязательное поле'
+		required: 'Обязательное поле'
 	})
+
+	const rememberUser = register('rememberUser')
 
 	return {
 		formState,
 		submit: handleSubmit(submit),
 		registers: {
 			login,
-			password
+			password,
+			rememberUser
 		}
 	}
 }
