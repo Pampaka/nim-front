@@ -6,6 +6,7 @@ import { Form } from 'shared/ui/form'
 import { Checkbox } from 'shared/ui/checkbox'
 import { Button } from 'shared/ui/button'
 import { Loader } from 'shared/ui/loader'
+import { ErrorMessage } from 'shared/ui/error-message'
 
 import style from './index.module.scss'
 
@@ -36,6 +37,7 @@ export const LoginForm = ({ ...props }: LoginFormProps) => {
 				{...registers.password}
 			/>
 			<Checkbox label="Запомнить пароль" />
+			<ErrorMessage error={errors.root?.serverError?.message || 'asdasdasd'} />
 			<Button className={style.submit} disabled={isSubmitting}>
 				{isSubmitting ? <Loader /> : 'Войти'}
 			</Button>

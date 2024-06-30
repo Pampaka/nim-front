@@ -18,9 +18,11 @@ const createHost = (baseURL: string) => {
 	})
 
 	$host.interceptors.response.use(null, error => {
+		// TODO дописать логику refresh
 		if (error?.response?.status !== 401) {
 			throw error
 		}
+		throw error
 	})
 
 	return $host

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 
 import { AuthApi } from 'shared/api'
 import { Paths } from 'shared/consts'
+import { setApiErrors } from 'shared/helpers/error'
 
 type LoginFormData = {
 	login: string
@@ -12,7 +13,7 @@ type LoginFormData = {
 export const useLoginForm = () => {
 	const navigate = useNavigate()
 
-	const { handleSubmit, register, formState } = useForm<LoginFormData>({
+	const { handleSubmit, register, formState, setError } = useForm<LoginFormData>({
 		defaultValues: {
 			login: '',
 			password: ''
@@ -28,16 +29,16 @@ export const useLoginForm = () => {
 			await AuthApi.signIn(data.login, data.password)
 			navigate(Paths.MAIN)
 		} catch (e) {
-			console.log(e)
+			setApiErrors(e, setError)
 		}
 	}
 
 	const login = register('login', {
-		required: 'Обязательное поле'
+		// required: 'Обязательное поле'
 	})
 
 	const password = register('password', {
-		required: 'Обязательное поле'
+		// required: 'Обязательное поле'
 	})
 
 	return {
