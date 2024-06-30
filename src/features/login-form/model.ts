@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 
-import { AuthApi } from 'shared/api'
+import { userService } from 'entities/user'
 import { Paths } from 'shared/consts'
 import { setApiErrors } from 'shared/helpers/error'
 
@@ -28,7 +28,7 @@ export const useLoginForm = () => {
 		}
 
 		try {
-			await AuthApi.signIn(data.login, data.password, data.rememberUser)
+			await userService.signIn(data.login, data.password, data.rememberUser)
 			navigate(Paths.MAIN)
 		} catch (e) {
 			setApiErrors(e, setError)

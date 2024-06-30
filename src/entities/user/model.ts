@@ -20,23 +20,33 @@ class UserService {
 		this.roleId = ''
 
 		makeAutoObservable(this, {
-			refresh: false
+			signIn: false,
+			refresh: false,
+			setToken: false
 		})
+	}
+
+	async signIn(login: string, password: string, rememberUser: boolean) {
+		const { accessToken } = await AuthApi.signIn(login, password, rememberUser)
+		this.setToken(accessToken)
 	}
 
 	async refresh() {
 		const { accessToken } = await AuthApi.refresh()
+		this.setToken(accessToken)
+	}
 
-		const user: UserType = jwtDecode(accessToken)
+	setToken(token: string) {
+		const user: UserType = jwtDecode(token)
 		if (!user) {
 			return
 		}
 
 		this.setUser(user)
-		localStorage.setItem('token', accessToken)
+		localStorage.setItem('token', token)
 	}
 
-	reset() {
+	resetUser() {
 		this.id = ''
 		this.login = ''
 		this.roleId = ''
