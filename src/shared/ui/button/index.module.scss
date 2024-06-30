@@ -5,14 +5,16 @@
 	border-radius: 6px;
 	background-color: var(--button-primary);
 	height: 32px;
-	padding: 0 12px;
+	padding: 4px 16px;
+	border: none;
+	color: var(--text-primary-on-color);
+	cursor: pointer;
 
 	&:hover {
-		color: var(--text-primary-hover);
 		background-color: var(--button-primary-hover);
 	}
+
 	&:active {
-		color: var(--text-primary-active);
 		background-color: var(--button-primary-active);
 	}
 }

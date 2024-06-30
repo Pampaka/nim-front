@@ -1,5 +1,6 @@
 import type { ComponentPropsWithRef } from 'react'
 import classNames from 'classnames'
+
 import style from './index.module.scss'
 
 export interface ButtonProps extends ComponentPropsWithRef<'button'> {}

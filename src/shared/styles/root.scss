@@ -13,12 +13,17 @@ html[theme='light'] {
 	--text-primary: #000000;
 	--text-primary-hover: #3a3a3a;
 	--text-primary-active: #000000;
+	--text-primary-on-color: #ffffff;
 	--text-danger: #f72424;
 
 	--bg-default: #f8f8f8;
 	--bg-primary: #ffffff;
 	--bg-primary-hover: #f0f0f0;
 	--bg-primary-active: #e3e3e3;
+
+	--button-primary: #00df9c;
+	--button-primary-hover: #00c489;
+	--button-primary-active: #00c489;
 
 	--border-primary: #d1d1d1;
 	--border-primary-active: #00df9c;
@@ -32,12 +37,17 @@ html[theme='dark'] {
 	--text-brand-hover: #00c78b;
 	--text-brand-active: #00e9a3;
 	--text-primary: #ffffff;
+	--text-primary-on-color: #ffffff;
 	--text-danger: #e44747;
 
 	--bg-default: #222222;
 	--bg-primary: #2e2e2e;
 
-	--border-primary: #d1d1d1;
+	--button-primary: #00bb83;
+	--button-primary-hover: #00a573;
+	--button-primary-active: #00a573;
+
+	--border-primary: #575757;
 	--border-danger: #e44747;
 
 	--shadow-primary: 0 0 1px 1px rgba(105, 105, 105, 0.644);
