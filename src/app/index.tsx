@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { Routing } from 'pages'
 import { Layout } from 'widgets/layout'
-import { useTheme } from 'features/theme-toggle'
+import { useTheme } from 'shared/ui/theme-toggle'
 
 import 'shared/styles'
 

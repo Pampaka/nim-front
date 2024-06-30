@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 
 import { layoutService } from './model'
-import { ThemeToggle } from 'features/theme-toggle'
+import { ThemeToggle } from 'shared/ui/theme-toggle'
 import { LoginLink } from 'features/login-link'
 import { Header } from 'shared/ui/header'
 import { Paths } from 'shared/consts'
