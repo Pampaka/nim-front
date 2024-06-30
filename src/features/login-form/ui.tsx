@@ -5,6 +5,7 @@ import { Input } from 'shared/ui/input'
 import { Form } from 'shared/ui/form'
 import { Checkbox } from 'shared/ui/checkbox'
 import { Button } from 'shared/ui/button'
+import { Loader } from 'shared/ui/loader'
 
 import style from './index.module.scss'
 
@@ -36,7 +37,7 @@ export const LoginForm = ({ ...props }: LoginFormProps) => {
 			/>
 			<Checkbox label="Запомнить пароль" />
 			<Button className={style.submit} disabled={isSubmitting}>
-				Войти
+				{isSubmitting ? <Loader /> : 'Войти'}
 			</Button>
 		</Form>
 	)
