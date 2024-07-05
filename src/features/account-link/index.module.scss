@@ -1,0 +1,14 @@
+@mixin row {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+
+.accountLink {
+    @include row;
+}
+
+.tools {
+    @include row;
+    column-gap: 4px;
+}

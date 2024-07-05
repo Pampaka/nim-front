@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react-lite'
 
 import { layoutService } from './model'
-import { ThemeToggle } from 'shared/ui/theme-toggle'
+import { userService } from 'entities/user'
+import { AccountLink } from 'features/account-link'
 import { LoginLink } from 'features/login-link'
+import { ThemeToggle } from 'shared/ui/theme-toggle'
 import { Header } from 'shared/ui/header'
 import { Paths } from 'shared/consts'
 
@@ -27,7 +29,7 @@ export const Layout = observer(({ children, className, ...props }: LayoutProps) 
 						end={
 							<>
 								<ThemeToggle />
-								<LoginLink />
+								{userService.isAuth ? <AccountLink /> : <LoginLink />}
 							</>
 						}
 					/>

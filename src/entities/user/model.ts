@@ -13,11 +13,13 @@ class UserService {
 	id: string
 	login: string
 	roleId: string
+	isAuth: boolean
 
 	constructor() {
 		this.id = ''
 		this.login = ''
 		this.roleId = ''
+		this.isAuth = false
 
 		makeAutoObservable(this, {
 			signIn: false,
@@ -47,12 +49,14 @@ class UserService {
 	}
 
 	resetUser() {
+		this.isAuth = false
 		this.id = ''
 		this.login = ''
 		this.roleId = ''
 	}
 
 	setUser(user: UserType) {
+		this.isAuth = true
 		this.id = user.id
 		this.login = user.login
 		this.roleId = user.roleId
