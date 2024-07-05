@@ -1,0 +1,13 @@
+.logoutButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    svg {
+        color: var(--icon-primary);
+
+        &:hover {
+            color: var(--icon-primary-hover);
+        }
+    }
+}

@@ -15,6 +15,11 @@ export class AuthApi {
 		return data
 	}
 
+	static async signOut() {
+		const { data } = await $authHost.post<{ success: boolean }>('api/oauth/sign-out')
+		return data
+	}
+
 	static async refresh() {
 		const { data } = await $authHost.post<TokenResponse>('api/oauth/refresh')
 		return data

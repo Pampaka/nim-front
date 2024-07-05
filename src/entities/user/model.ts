@@ -33,6 +33,12 @@ class UserService {
 		this.setToken(accessToken)
 	}
 
+	async signOut() {
+		await AuthApi.signOut()
+		this.resetUser()
+		localStorage.removeItem('token')
+	}
+
 	async refresh() {
 		const { accessToken } = await AuthApi.refresh()
 		this.setToken(accessToken)

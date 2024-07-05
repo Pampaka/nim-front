@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite'
 import { layoutService } from './model'
 import { userService } from 'entities/user'
 import { AccountLink } from 'features/account-link'
+import { LogoutButton } from 'features/logout-button'
 import { LoginLink } from 'features/login-link'
 import { ThemeToggle } from 'shared/ui/theme-toggle'
 import { Header } from 'shared/ui/header'
@@ -29,7 +30,11 @@ export const Layout = observer(({ children, className, ...props }: LayoutProps) 
 						end={
 							<>
 								<ThemeToggle />
-								{userService.isAuth ? <AccountLink /> : <LoginLink />}
+								{userService.isAuth ? (
+									<AccountLink tools={<LogoutButton />} />
+								) : (
+									<LoginLink />
+								)}
 							</>
 						}
 					/>
